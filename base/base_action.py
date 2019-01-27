@@ -53,5 +53,6 @@ class BaseAction:
         png_name = "./screen/{}.png".format(int(time.time()))
         self.driver.get_screenshot_as_file(png_name)
 
-        # with open("abc.png", "rb") as f:
-        # allure.attach("截图名字", f.read(), allure.attach_type.PNG)
+        with open(png_name, "rb") as f:
+             allure.attach("截图名字", f.read(), allure.attach_type.PNG)
+        
